@@ -12,13 +12,13 @@ export const setUserInfo = (user) => {
   if (!user) return;
   localStorage.setItem('user', JSON.stringify({
     id: user.id || user._id,
-    username: user.username,
     email: user.email,
-    firstName: user.firstName,
-    lastName: user.lastName,
-    profilePicture: user.profilePicture,
-    coverPhoto: user.coverPhoto,
-    bio: user.bio,
+    fullName: user.fullName,
+    gender: user.gender,
+    birthDate: user.birthDate,
+    height: user.height,
+    weight: user.weight,
+    isAdmin: user.isAdmin ?? false,
   }));
 };
 
