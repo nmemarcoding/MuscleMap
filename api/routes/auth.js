@@ -8,7 +8,7 @@ const router = express.Router();
 // Register route
 router.post('/register', async (req, res) => {
     try {
-        const { email, password, fullName, gender, birthDate, heightCm, weightKg } = req.body;
+        const { email, password, fullName, gender, birthDate, height, weight } = req.body;
 
         // Input validation
         if (!email || !password || !fullName) {
@@ -39,8 +39,8 @@ router.post('/register', async (req, res) => {
             fullName,
             gender: gender || '',
             birthDate: birthDate || null,
-            heightCm: heightCm || null,
-            weightKg: weightKg || null
+            height: height || null,
+            weight: weight || null
         });
 
         await user.save();
@@ -59,8 +59,8 @@ router.post('/register', async (req, res) => {
             fullName: user.fullName,
             gender: user.gender,
             birthDate: user.birthDate,
-            heightCm: user.heightCm,
-            weightKg: user.weightKg
+            height: user.height,
+            weight: user.weight
         });
 
     } catch (error) {
@@ -121,8 +121,8 @@ router.post('/login', async (req, res) => {
             fullName: user.fullName,
             gender: user.gender,
             birthDate: user.birthDate,
-            heightCm: user.heightCm,
-            weightKg: user.weightKg
+            height: user.height,
+            weight: user.weight
         });
 
     } catch (error) {

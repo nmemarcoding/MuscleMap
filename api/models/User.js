@@ -24,11 +24,11 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: null
     },
-    heightCm: {
+    height: {
         type: Number,
         default: null
     },
-    weightKg: {
+    weight: {
         type: Number,
         default: null
     },

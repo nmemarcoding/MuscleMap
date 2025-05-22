@@ -15,8 +15,8 @@ router.get('/me', authMiddleware, async (req, res) => {
         fullName: req.user.fullName,
         gender: req.user.gender,
         birthDate: req.user.birthDate,
-        heightCm: req.user.heightCm,
-        weightKg: req.user.weightKg,
+        height: req.user.height,
+        weight: req.user.weight,
         isAdmin: req.user.isAdmin,
         createdAt: req.user.createdAt,
         updatedAt: req.user.updatedAt
@@ -32,15 +32,15 @@ router.get('/me', authMiddleware, async (req, res) => {
 // Add a route to update user profile
 router.put('/profile', authMiddleware, async (req, res) => {
   try {
-    const { fullName, gender, birthDate, heightCm, weightKg } = req.body;
+    const { fullName, gender, birthDate, height, weight } = req.body;
     const user = req.user;
     
     // Update fields if provided
     if (fullName) user.fullName = fullName;
     if (gender) user.gender = gender;
     if (birthDate) user.birthDate = birthDate;
-    if (heightCm) user.heightCm = heightCm;
-    if (weightKg) user.weightKg = weightKg;
+    if (height) user.height = height;
+    if (weight) user.weight = weight;
     
     await user.save();
     
@@ -51,8 +51,8 @@ router.put('/profile', authMiddleware, async (req, res) => {
         fullName: user.fullName,
         gender: user.gender,
         birthDate: user.birthDate,
-        heightCm: user.heightCm,
-        weightKg: user.weightKg,
+        height: user.height,
+        weight: user.weight,
         isAdmin: user.isAdmin,
         createdAt: user.createdAt,
         updatedAt: user.updatedAt
