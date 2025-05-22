@@ -10,7 +10,7 @@ import './App.css';
 
 // 👇 Simple loading screen while checking login state
 const Loading = () => (
-  <div className="flex flex-col items-center justify-center h-screen w-full bg-white bg-opacity-90">
+  <div className="flex flex-col items-center justify-center h-screen w-full bg-gradient-to-br from-indigo-100 via-purple-50 to-blue-100">
     <div className="w-12 h-12 rounded-full border-4 border-gray-200 border-t-indigo-600 animate-spin mb-4"></div>
     <p className="text-gray-700">Loading...</p>
   </div>
@@ -44,7 +44,7 @@ const PublicPage = ({ children }) => {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-blue-100">
         <Navbar />
         <div className="pt-16">
           <Routes>

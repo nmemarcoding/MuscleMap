@@ -39,7 +39,28 @@
   }
 }
 
-/* Loading screen styles */
+/* Common Styles */
+body {
+  background-color: #f9fafb;
+}
+
+/* Page transitions */
+.page-transition {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading screen styles with matching colors */
 .loading-container {
   display: flex;
   flex-direction: column;
@@ -47,14 +68,14 @@
   align-items: center;
   height: 100vh;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-image: linear-gradient(to bottom right, #e0e7ff, #f5f3ff, #dbeafe);
 }
 
 .loading-spinner {
   width: 48px;
   height: 48px;
   border: 5px solid #f3f3f3;
-  border-top: 5px solid #3498db;
+  border-top: 5px solid #4f46e5; /* Indigo color to match theme */
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 16px;
@@ -63,4 +84,9 @@
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Focus style for consistent inputs */
+.input-focus {
+  @apply focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500;
 }

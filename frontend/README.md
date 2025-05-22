@@ -1,4 +1,23 @@
-# Getting Started with Create React App
+# MuscleMap - Your Personal Workout Tracker
+
+MuscleMap is a web application that helps users track and optimize their workouts. It provides a clean, intuitive interface for managing your fitness journey.
+
+## Features
+
+- User authentication (signup, login, logout)
+- Personal profile management
+- Workout tracking
+- Progress monitoring
+
+## Design Philosophy
+
+MuscleMap uses a clean, modern UI with a consistent color scheme across all pages:
+- Smooth gradient backgrounds
+- Card-based content layout
+- Indigo accent colors
+- Responsive design for all devices
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
