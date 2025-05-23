@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
+import CreateExercise from './pages/CreateExercise';
 import './App.css';
 
 // 👇 Simple loading screen while checking login state
@@ -75,6 +76,16 @@ function App() {
               element={
                 <ProtectedPage>
                   <Dashboard />
+                </ProtectedPage>
+              }
+            />
+            
+            {/* Create Exercise page is protected - only accessible if logged in */}
+            <Route
+              path="/exercises/create"
+              element={
+                <ProtectedPage>
+                  <CreateExercise />
                 </ProtectedPage>
               }
             />

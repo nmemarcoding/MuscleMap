@@ -1,5 +1,6 @@
 import React from 'react';
 import { getUserInfo } from '../hooks/requestMethods';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   const user = getUserInfo();
@@ -249,9 +250,14 @@ const Dashboard = () => {
                 <h3 className="text-white text-xl font-bold mb-2">Ready to start your fitness journey?</h3>
                 <p className="text-white text-opacity-90">Begin tracking your workouts and see your progress over time.</p>
               </div>
-              <button className="bg-white text-indigo-600 hover:bg-indigo-50 font-medium py-2 px-6 rounded-lg shadow transition-colors duration-300">
-                Start Workout
-              </button>
+              <div className="flex space-x-3">
+                <button className="bg-white text-indigo-600 hover:bg-indigo-50 font-medium py-2 px-6 rounded-lg shadow transition-colors duration-300">
+                  Start Workout
+                </button>
+                <Link to="/exercises/create" className="bg-indigo-800 text-white hover:bg-indigo-900 font-medium py-2 px-6 rounded-lg shadow transition-colors duration-300">
+                  Create Exercise
+                </Link>
+              </div>
             </div>
           </div>
         </div>
