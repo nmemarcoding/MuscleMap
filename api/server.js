@@ -5,6 +5,7 @@ const authRoutes = require('./routes/auth');
 const protectedRoutes = require('./routes/protected');
 const exerciseRoutes = require('./routes/exercises');
 const workoutRoutes = require('./routes/workouts');
+const workoutExerciseRoutes = require('./routes/workoutExercises');
 const cors = require('cors');
 
 // Initialize express app
@@ -43,6 +44,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/protected', protectedRoutes);
 app.use('/api/exercises', exerciseRoutes);
 app.use('/api/workouts', workoutRoutes);
+app.use('/api/workout-exercises', workoutExerciseRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

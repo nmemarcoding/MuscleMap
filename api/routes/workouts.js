@@ -47,11 +47,20 @@ router.get('/:id', authMiddleware, async (req, res) => {
 // @access  Private
 router.post('/', authMiddleware, async (req, res) => {
   try {
-    const { planName, goal, level, durationWeeks } = req.body;
+    const { planName, goal, level, durationWeeks, workoutsPerWeek } = req.body;
     
     // Basic validation
     if (!planName) {
       return res.status(400).json({ message: 'Plan name is required' });
+    }
+    
+    // Validate workoutsPerWeek if provided
+    if (workoutsPerWeek !== undefined) {
+      if (workoutsPerWeek < 1 || workoutsPerWeek > 7) {
+        return res.status(400).json({ 
+          message: 'Workouts per week must be between 1 and 7'
+        });
+      }
     }
     
     const newWorkout = new Workout({
@@ -59,7 +68,8 @@ router.post('/', authMiddleware, async (req, res) => {
       planName,
       goal,
       level,
-      durationWeeks
+      durationWeeks,
+      workoutsPerWeek: workoutsPerWeek || 3 // Use provided value or default
     });
     
     const workout = await newWorkout.save();
@@ -75,7 +85,7 @@ router.post('/', authMiddleware, async (req, res) => {
 // @access  Private
 router.put('/:id', authMiddleware, async (req, res) => {
   try {
-    const { planName, goal, level, durationWeeks } = req.body;
+    const { planName, goal, level, durationWeeks, workoutsPerWeek } = req.body;
     
     // Build workout object
     const workoutFields = {};
@@ -83,6 +93,15 @@ router.put('/:id', authMiddleware, async (req, res) => {
     if (goal !== undefined) workoutFields.goal = goal;
     if (level !== undefined) workoutFields.level = level;
     if (durationWeeks !== undefined) workoutFields.durationWeeks = durationWeeks;
+    if (workoutsPerWeek !== undefined) {
+      // Validate workoutsPerWeek range
+      if (workoutsPerWeek < 1 || workoutsPerWeek > 7) {
+        return res.status(400).json({ 
+          message: 'Workouts per week must be between 1 and 7'
+        });
+      }
+      workoutFields.workoutsPerWeek = workoutsPerWeek;
+    }
     
     let workout = await Workout.findById(req.params.id);
     

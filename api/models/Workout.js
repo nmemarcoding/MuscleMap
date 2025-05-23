@@ -21,6 +21,12 @@ const workoutSchema = new mongoose.Schema({
     },
     durationWeeks: {
         type: Number
+    },
+    workoutsPerWeek: {
+        type: Number,
+        default: 3,
+        min: 1,
+        max: 7
     }
 }, {
     timestamps: {
