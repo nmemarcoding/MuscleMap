@@ -2,13 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-medium rounded-xl shadow-button hover:shadow-lg transition duration-300 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-opacity-50 transform hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-dark-100 text-dark-800 font-medium rounded-xl hover:bg-dark-200 transition duration-300 focus:outline-none focus:ring-2 focus:ring-dark-300 focus:ring-opacity-50;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl bg-dark-50 border border-dark-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-500 focus:ring-opacity-30 transition duration-200 focus:outline-none;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-card p-6 border border-dark-100/20;
+  }
+  
+  .mobile-container {
+    @apply max-w-lg mx-auto;
+  }
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
 }
 
 code {

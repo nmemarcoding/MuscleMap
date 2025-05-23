@@ -8,6 +8,7 @@ import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import CreateExercise from './pages/CreateExercise';
 import ExerciseBrowser from './pages/ExerciseBrowser';
+import CreateWorkout from './pages/CreateWorkout';
 import './App.css';
 
 // 👇 Simple loading screen while checking login state
@@ -95,6 +96,16 @@ function App() {
               element={
                 <ProtectedPage>
                   <CreateExercise />
+                </ProtectedPage>
+              }
+            />
+            
+            {/* Workout related routes - protected */}
+            <Route
+              path="/workouts/create"
+              element={
+                <ProtectedPage>
+                  <CreateWorkout />
                 </ProtectedPage>
               }
             />

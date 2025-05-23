@@ -254,11 +254,11 @@ const Dashboard = () => {
                 <button className="bg-white text-indigo-600 hover:bg-indigo-50 font-medium py-2 px-6 rounded-lg shadow transition-colors duration-300">
                   Start Workout
                 </button>
+                <Link to="/workouts/create" className="bg-indigo-800 text-white hover:bg-indigo-900 font-medium py-2 px-6 rounded-lg shadow transition-colors duration-300">
+                  Create Workout
+                </Link>
                 <Link to="/exercises" className="bg-indigo-800 text-white hover:bg-indigo-900 font-medium py-2 px-6 rounded-lg shadow transition-colors duration-300">
                   Browse Exercises
-                </Link>
-                <Link to="/exercises/create" className="bg-indigo-800 text-white hover:bg-indigo-900 font-medium py-2 px-6 rounded-lg shadow transition-colors duration-300">
-                  Create Exercise
                 </Link>
               </div>
             </div>
