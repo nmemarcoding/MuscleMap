@@ -52,6 +52,16 @@ const Navbar = () => {
                     Dashboard
                   </Link>
                   <Link 
+                    to="/exercises" 
+                    className={`px-3 py-2 rounded-md text-sm font-medium ${
+                      location.pathname === '/exercises' 
+                        ? 'text-indigo-600 bg-indigo-50' 
+                        : 'text-gray-700 hover:bg-gray-100'
+                    }`}
+                  >
+                    Exercises
+                  </Link>
+                  <Link 
                     to="/exercises/create" 
                     className={`px-3 py-2 rounded-md text-sm font-medium ${
                       location.pathname === '/exercises/create' 
@@ -176,6 +186,16 @@ const Navbar = () => {
                 }`}
               >
                 Dashboard
+              </Link>
+              <Link
+                to="/exercises"
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  location.pathname === '/exercises'
+                    ? 'text-indigo-600 bg-indigo-50'
+                    : 'text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                Exercises
               </Link>
               <Link
                 to="/exercises/create"

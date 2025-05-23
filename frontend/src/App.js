@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import CreateExercise from './pages/CreateExercise';
+import ExerciseBrowser from './pages/ExerciseBrowser';
 import './App.css';
 
 // 👇 Simple loading screen while checking login state
@@ -80,7 +81,15 @@ function App() {
               }
             />
             
-            {/* Create Exercise page is protected - only accessible if logged in */}
+            {/* Exercise related routes - protected */}
+            <Route
+              path="/exercises"
+              element={
+                <ProtectedPage>
+                  <ExerciseBrowser />
+                </ProtectedPage>
+              }
+            />
             <Route
               path="/exercises/create"
               element={

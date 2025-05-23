@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const authRoutes = require('./routes/auth');
 const protectedRoutes = require('./routes/protected');
 const exerciseRoutes = require('./routes/exercises');
+const workoutRoutes = require('./routes/workouts');
 const cors = require('cors');
 
 // Initialize express app
@@ -41,6 +42,7 @@ mongoose.connect(process.env.MONGO_URI)
 app.use('/api/auth', authRoutes);
 app.use('/api/protected', protectedRoutes);
 app.use('/api/exercises', exerciseRoutes);
+app.use('/api/workouts', workoutRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
